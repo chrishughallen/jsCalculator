@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+body {
+  display: flex;
+}
+
 .case {
   background: #b4c5e4;
   width: 32rem;
@@ -56,6 +60,11 @@
 .btn-blue {
   background: dodgerblue;
   color: white;
-  border-color: dodgerblue;
+  border: none;
+}
+
+.btn-red {
+  background: #e84118;
+  color: white;
   border: none;
 }

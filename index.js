@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", initialize)
-const display = document.querySelector('.screen')
+const display = document.querySelector('.js-screen')
+const history = document.querySelector('.js-history')
 let memory = []
+let result = 0
 
 function initialize () {
   let btns = Array.from(document.querySelectorAll('.js-btn'))
@@ -9,10 +11,14 @@ function initialize () {
   })
 }
 
+
+
+
+
 function calculate () {
   if (event.target.dataset.val === "C") {
-    display.innerText = ""
     memory = []
+    display.innerText = ""
     return
   }
   // See if btn is a value or an operator
@@ -36,7 +42,16 @@ function calculate () {
     memory.push(display.innerText)
 
   } else if (event.target.dataset.type == "equals") {
+    //if user presses equals when there is nothing in the display show an error
+    if (display.innerText == "" || display.innerText == "Try starting with a number...") {
+      memory = []
+      display.innerText = "Try starting with a number..."
+      return
+    }
     memory.push(display.innerText)
     console.log(memory)
+    let answer = eval(memory.join(""))
+    display.innerText = answer
+    memory = []
   }
 }
