@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .case {
@@ -19,10 +20,15 @@
 }
 
 .screen {
-  padding: 2rem 0;
+  height: 4rem;
   border: 1px solid black;
   grid-area: screen;
   background: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  font-size: 2rem;
 }
 
 .numbers {
@@ -42,9 +48,9 @@
 .btn {
   height: 5rem;
   width: 5rem;
-  font-size: 1.8rem;
   background: #090c9b;
   color: ivory;
+  font-size: 2rem;
 }
 
 .btn-blue {
