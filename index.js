@@ -11,6 +11,10 @@ function initialize () {
   })
 }
 
+
+
+
+
 function calculate () {
   if (event.target.dataset.val === "C") {
     memory = []
@@ -38,14 +42,16 @@ function calculate () {
     memory.push(display.innerText)
 
   } else if (event.target.dataset.type == "equals") {
+    //if user presses equals when there is nothing in the display show an error
+    if (display.innerText == "" || display.innerText == "Try starting with a number...") {
+      memory = []
+      display.innerText = "Try starting with a number..."
+      return
+    }
     memory.push(display.innerText)
     console.log(memory)
     let answer = eval(memory.join(""))
     display.innerText = answer
     memory = []
   }
-}
-
-function add (a, b) {
-  return a + b
 }
